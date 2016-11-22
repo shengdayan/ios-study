@@ -10,6 +10,9 @@
 
 http://www.cnblogs.com/ljlkfx/archive/2015/05/26/4531268.html
 
+## github常用操作命令
+
+http://caibaojian.com/use-github.html
 
 ## 快捷键
 
