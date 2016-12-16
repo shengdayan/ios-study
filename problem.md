@@ -121,4 +121,5 @@ CGSize size = [self.label.text boundingRectWithSize:CGSizeMake(355, MAXFLOAT) op
 
 case中的_代表任何值
 
-
+##统计行数
+find . "(" -name "*.m" -or -name "*.mm" -or -name "*.cpp" -or -name "*.h" -or -name "*.rss" ")" -print | xargs wc -l
