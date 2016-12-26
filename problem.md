@@ -153,3 +153,6 @@ EmailViewController * vc = [[EmailViewController alloc] init];
 [YSXJumpToVC jumpToVC:vc withSaveParam:[YSXUserInfo sharedYSXUserInfo].addEmail withSaveDate:[YSXUserInfo sharedYSXUserInfo].addEmailDate withNavigationController:self.navigationController];
 });
 `
+###cocoapods遇到的坑（Could not read from remote repository）
+url = https://server/username/*your*git*app*.git   （比如：url = https://hemcsec.tk/DEEP/myproject.git）
+改完之后保存，重新git push -u origin master  问题解决。 
