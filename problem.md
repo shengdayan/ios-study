@@ -113,8 +113,7 @@ label2.transform = CGAffineTransformMakeTranslation(-50, 200);
 2.用Diplomat这个第三方
 
 ##根据字符串的长度设定label的高度和大小
-`CGSize size = [self.label.text boundingRectWithSize:CGSizeMake(355, MAXFLOAT) options: NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObject:self.label.font forKey:NSFontAttributeName] context:nil].size;
-`
+`CGSize size = [self.label.text boundingRectWithSize:CGSizeMake(355, MAXFLOAT) options: NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObject:self.label.font forKey:NSFontAttributeName] context:nil].size;`
 
 ##swift
 
@@ -125,8 +124,7 @@ case中的_代表任何值
 `find . "(" -name "*.m" -or -name "*.mm" -or -name "*.cpp" -or -name "*.h" -or -name "*.rss" ")" -print | xargs wc -l`
 
 ##项目中的需求：控制弹窗弹出次数，要求每天弹出一次即可，写一个类，方便调用
-`
-+(void)jumpToVC:(UIViewController *)myVC withSaveParam:(NSString *)saveParam withSaveDate:(NSDate *)saveDate withNavigationController:(UINavigationController *)nav{
+`+(void)jumpToVC:(UIViewController *)myVC withSaveParam:(NSString *)saveParam withSaveDate:(NSDate *)saveDate withNavigationController:(UINavigationController *)nav{
 //判断参数是否保存
 if (saveParam.length>0 && saveParam != nil) {//Y
 YSXLog(@"参数已保存");
@@ -145,14 +143,20 @@ YSXLog(@"没有超过24小时");
 
 [nav pushViewController:myVC animated:YES];
 }
-}}
-`
+}}`
+
 ###调用时，由于“所依赖的界面”还没加载完，所以有时不能成功弹出，可以适当延迟弹出时间1秒
 `dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 EmailViewController * vc = [[EmailViewController alloc] init];
 [YSXJumpToVC jumpToVC:vc withSaveParam:[YSXUserInfo sharedYSXUserInfo].addEmail withSaveDate:[YSXUserInfo sharedYSXUserInfo].addEmailDate withNavigationController:self.navigationController];
-});
-`
+});`
+
 ###cocoapods遇到的坑（Could not read from remote repository）
 url = https://server/username/*your*git*app*.git   （比如：url = https://hemcsec.tk/DEEP/myproject.git）
 改完之后保存，重新git push -u origin master  问题解决。 
+
+###检查是否安装地图的应用
+
+`[[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"appurlscheme://"]`
+
+[其它博客地址的记载](http://www.jianshu.com/p/c4169171eaa6)
