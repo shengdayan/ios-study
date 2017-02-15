@@ -160,3 +160,6 @@ url = https://server/username/*your*git*app*.git   （比如：url = https://hem
 `[[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"appurlscheme://"]`
 
 [其它博客地址的记载](http://www.jianshu.com/p/c4169171eaa6)
+
+###获取设备UUID的方法
+[地址](http://blog.csdn.net/wsdxsyb/article/details/51773494)
