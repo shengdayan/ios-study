@@ -186,3 +186,5 @@ https://github.com/i5ting/awesome-mac-practice2
 
 http://wowubuntu.com/markdown/#list
 
+##git命令
+http://blog.csdn.net/weichuang_1/article/details/48437911
