@@ -43,16 +43,16 @@ ctrl+alt+esc 强制退出某个程序
 
   在约束的时候在下方的四个按钮选择第二个，在做完约束后选择all frame contarins ，也就是容器中的所有约束都更新，因为约束的时候有时根据其它的控件定的位置，需要全部更新
 
-##代码规范
+## 代码规范
 
 - 方法之间要空一行在写，方法源或者代理之类的要写promma注释，命名的时候要见其名只其意 
 - 在打断点的时候在下面的日志输出里打 po +名字 ，可以查看该类的内容
 
-##协议
+## 协议
 
 协议可以继承，协议是对nsobject的扩展
 
-##bug
+## bug
 
 在自定义的cell里加button，给button传tag值得时候不能直接传，要给cell传tag值，然后在delegate里把cell的tag传给button的tag
 
@@ -66,7 +66,7 @@ return isMatch;
 
 }
 `
-##正则匹配用户密码6-18位数字和字母组合
+## 正则匹配用户密码6-18位数字和字母组合
 `+ (BOOL)checkPassword:(NSString *) password
 
 {
@@ -84,7 +84,7 @@ return
 isMatch;
 }
 `
-##iOS中UILabel滚动字幕动画的实现
+## iOS中UILabel滚动字幕动画的实现
 `UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, 150, 50)];
 label.text = @"this is how life goes";
 UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(300, 100, 100, 50)];
@@ -96,9 +96,9 @@ label.transform = CGAffineTransformMakeTranslation(80, 200);
 label2.transform = CGAffineTransformMakeTranslation(-50, 200);
 } completion:nil];
 `
-##微信登录问题
+## 微信登录问题
 
-1.iOS 9系统策略更新，限制了http协议的访问，此外应用需要在“Info.plist”中将要使用的URL Schemes列为白名单，才可正常检查其他应用是否安装。
+- iOS 9系统策略更新，限制了http协议的访问，此外应用需要在“Info.plist”中将要使用的URL Schemes列为白名单，才可正常检查其他应用是否安装。
 受此影响，当你的应用在iOS 9中需要使用微信SDK的相关能力（分享、收藏、支付、登录等）时，需要在“Info.plist”里增加如下代码：
 <key>LSApplicationQueriesSchemes</key>
 <array>
@@ -110,20 +110,20 @@ label2.transform = CGAffineTransformMakeTranslation(-50, 200);
 <true/>
 </dict>
 
-2.用Diplomat这个第三方
+- 用Diplomat这个第三方
 
-##根据字符串的长度设定label的高度和大小
+## 根据字符串的长度设定label的高度和大小
 `CGSize size = [self.label.text boundingRectWithSize:CGSizeMake(355, MAXFLOAT) options: NSStringDrawingUsesLineFragmentOrigin attributes:[NSDictionary dictionaryWithObject:self.label.font forKey:NSFontAttributeName] context:nil].size;`
 
-##swift
+## swift
 
 case中的_代表任何值
 
-##统计行数
+## 统计行数
 
 `find . "(" -name "*.m" -or -name "*.mm" -or -name "*.cpp" -or -name "*.h" -or -name "*.rss" ")" -print | xargs wc -l`
 
-##项目中的需求：控制弹窗弹出次数，要求每天弹出一次即可，写一个类，方便调用
+## 项目中的需求：控制弹窗弹出次数，要求每天弹出一次即可，写一个类，方便调用
 `+(void)jumpToVC:(UIViewController *)myVC withSaveParam:(NSString *)saveParam withSaveDate:(NSDate *)saveDate withNavigationController:(UINavigationController *)nav{
 //判断参数是否保存
 if (saveParam.length>0 && saveParam != nil) {//Y
@@ -145,26 +145,26 @@ YSXLog(@"没有超过24小时");
 }
 }}`
 
-###调用时，由于“所依赖的界面”还没加载完，所以有时不能成功弹出，可以适当延迟弹出时间1秒
+### 调用时，由于“所依赖的界面”还没加载完，所以有时不能成功弹出，可以适当延迟弹出时间1秒
 `dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 EmailViewController * vc = [[EmailViewController alloc] init];
 [YSXJumpToVC jumpToVC:vc withSaveParam:[YSXUserInfo sharedYSXUserInfo].addEmail withSaveDate:[YSXUserInfo sharedYSXUserInfo].addEmailDate withNavigationController:self.navigationController];
 });`
 
-###cocoapods遇到的坑（Could not read from remote repository）
-url = https://server/username/*your*git*app*.git   （比如：url = https://hemcsec.tk/DEEP/myproject.git）
+### cocoapods遇到的坑（Could not read from remote repository）
+> url = https://server/username/*your*git*app*.git   （比如：url = https://hemcsec.tk/DEEP/myproject.git）
 改完之后保存，重新git push -u origin master  问题解决。 
 
-###检查是否安装地图的应用
+### 检查是否安装地图的应用
 
 `[[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"appurlscheme://"]`
 
 [其它博客地址的记载](http://www.jianshu.com/p/c4169171eaa6)
 
-###获取设备UUID的方法
+### 获取设备UUID的方法
 [地址](http://blog.csdn.net/wsdxsyb/article/details/51773494)
 
-###如图所示，每次想选中右上角的图片，结果总是触发“取消”事件，明明没有点到导航栏上面去，问题的原因不清楚，解决方法创建一个UINavigationBar的分类，重写hitTest方法
+### 如图所示，每次想选中右上角的图片，结果总是触发“取消”事件，明明没有点到导航栏上面去，问题的原因不清楚，解决方法创建一个UINavigationBar的分类，重写hitTest方法
 
 # ios-study
 
