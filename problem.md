@@ -163,3 +163,26 @@ url = https://server/username/*your*git*app*.git   （比如：url = https://hem
 
 ###获取设备UUID的方法
 [地址](http://blog.csdn.net/wsdxsyb/article/details/51773494)
+
+###如图所示，每次想选中右上角的图片，结果总是触发“取消”事件，明明没有点到导航栏上面去，问题的原因不清楚，解决方法创建一个UINavigationBar的分类，重写hitTest方法
+
+# ios-study
+
+## sofeware
+
+- ohmyzsh
+- cinch
+- sublime3 
+- dash
+- brew
+- imageOptim
+
+
+## awesome mac
+
+https://github.com/i5ting/awesome-mac-practice2
+
+## markdown语法
+
+http://wowubuntu.com/markdown/#list
+
